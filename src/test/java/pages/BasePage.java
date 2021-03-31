@@ -14,12 +14,18 @@ public class BasePage {
         System.setProperty("webdriver.opera.driver", "/path/to/C:/operadriver_win64");
         OperaOptions operaOptions = new OperaOptions();
         driver =  new OperaDriver (operaOptions);
-        wait = new WebDriverWait(driver,10);
+        setWait(new WebDriverWait(driver,10));
     }
 
     public BasePage(WebDriver driver){
         BasePage.driver = driver;
-        wait = new WebDriverWait(driver, 10);
+        setWait(new WebDriverWait(driver, 10));
+    }
+    public static WebDriverWait getWait() {
+        return wait;
+    }
+    public static void setWait(WebDriverWait wait) {
+        BasePage.wait = wait;
     }
     public static void navigateTo(String url){
         driver.get(url);
