@@ -11,7 +11,7 @@ public class BasePage {
     private static WebDriverWait wait;
 
     static{
-        System.setProperty("webdriver.opera.driver", "/path/to/C:/operadriver_win64");
+        System.setProperty("webdriver.opera.driver", "C:/operadriver_win64/operadriver.exe");
         OperaOptions operaOptions = new OperaOptions();
         driver =  new OperaDriver (operaOptions);
         setWait(new WebDriverWait(driver,10));

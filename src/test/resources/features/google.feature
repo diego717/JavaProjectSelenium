@@ -6,4 +6,4 @@ And ingreso criterio de busqueda
 When clickeo en boton de busqueda
 Then obtengo resultado
    
-probando los cambios
+

@@ -13,7 +13,7 @@ public class GoogleSteps {
 
    GooglePage google = new GooglePage();
     
-@Given("^navego a Google$")
+@Given("navego a Google")
     public void navigateToGoogle (){
    google.navigateToGoogle();
     }
