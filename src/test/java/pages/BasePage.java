@@ -1,8 +1,12 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
@@ -14,20 +18,50 @@ public class BasePage {
         System.setProperty("webdriver.opera.driver", "C:/operadriver_win64/operadriver.exe");
         OperaOptions operaOptions = new OperaOptions();
         driver =  new OperaDriver (operaOptions);
-        setWait(new WebDriverWait(driver,10));
+        wait = new WebDriverWait  (driver,10);
     }
 
     public BasePage(WebDriver driver){
         BasePage.driver = driver;
-        setWait(new WebDriverWait(driver, 10));
+        wait = new WebDriverWait  (driver,10);
     }
-    public static WebDriverWait getWait() {
-        return wait;
-    }
+
     public static void setWait(WebDriverWait wait) {
         BasePage.wait = wait;
     }
     public static void navigateTo(String url){
         driver.get(url);
     }
+
+    private WebElement Find(String locator){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+    }
+
+    public void clickElement(String locator){
+        Find(locator).click();
+    }
+
+    public void write (String locator, String textToWrite){
+        Find(locator).clear();
+        Find(locator).sendKeys(textToWrite);
+    }
+
+    public void selectFromDropdownByValue (String locator, String valueToSelect){
+        Select dropdown =  new Select(Find(locator));
+
+        dropdown.selectByValue(valueToSelect);
+    }
+
+    public void selectFromDropdownByIndex (String locator, int valueToSelect){
+        Select dropdown =  new Select(Find(locator));
+
+        dropdown.selectByIndex(valueToSelect);
+    }
+    public void selectFromDropdownByText (String locator, String valueToSelect){
+        Select dropdown =  new Select(Find(locator));
+
+        dropdown.selectByVisibleText(valueToSelect);}
 }
+
+
+

@@ -6,3 +6,7 @@ pages/BasePage.java
  pages.BasePage
 steps/GoogleSteps.java
  steps.GoogleSteps
+steps/testSandboxSteps.java
+ steps.testSandboxSteps
+pages/TestSandBox.java
+ pages.TestSandBox
