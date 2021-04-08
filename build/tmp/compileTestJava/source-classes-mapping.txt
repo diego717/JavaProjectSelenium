@@ -1,5 +1,5 @@
-runner/runner.java
- runner.runner
+steps/GridSteps.java
+ steps.GridSteps
 pages/GooglePage.java
  pages.GooglePage
 pages/BasePage.java
@@ -8,5 +8,9 @@ steps/GoogleSteps.java
  steps.GoogleSteps
 steps/testSandboxSteps.java
  steps.testSandboxSteps
+pages/GridPage.java
+ pages.GridPage
 pages/TestSandBox.java
  pages.TestSandBox
+runner/runner.java
+ runner.runner

@@ -5,11 +5,11 @@ public class TestSandBox extends BasePage {
 
 public TestSandBox(){
         super(driver);
-    }
+}
 public void navigateToSandbox(){
         navigateTo("https://www.testandquiz.com/selenium/testing.html");
-        }
+}
 public void selectCategory(String category){
-    selectFromDropdownByValue(categoryDropdown, category);
+        selectFromDropdownByValue(categoryDropdown, category);
 }
 }
